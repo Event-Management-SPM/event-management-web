@@ -503,10 +503,10 @@ function loadMap(x, y) {
 }
 
 function adjustColor(former, next) {
-    document.getElementById(former).style.color = "#442c2e";
-    document.getElementById(former).style.backgroundColor = "#00ffffff";
-    document.getElementById(next).style.color = "white";
-    document.getElementById(next).style.backgroundColor = "#442c2e";
+    document.getElementById(former).classList.remove("menu-item-active");
+    document.getElementById(former).classList.add("menu-item");
+    document.getElementById(next).classList.remove("menu-item");
+    document.getElementById(next).classList.add("menu-item-active");
 }
 
 function displaySuccessModal() {

@@ -6,21 +6,15 @@ fetchHTML("home.html")
     });
 
 active = "home";
-document.getElementById(active).style.color = "red";
-document.getElementById(active).style.backgroundColor = "#442c2e";
+document.getElementById(active).classList.remove("menu-item");
+document.getElementById(active).classList.add("menu-item-active");
 
-const tabs = ["create", "ongoing", "past", "add_employee", "manage_employees", "update_org", "update_profile", "home", "stats"];
+const tabs = ["create", "ongoing", "past", "add_employee", "manage_employees", "update_org", "update_profile", "home"];
 for (let link of tabs) {
     document.getElementById(link)
         .addEventListener('click', () => {
             adjustColor(active, link);
             active = link;
-            if (link == "stats") {
-                fetchHTML("home.html")
-                .then(value => {
-                    content.innerHTML = value;
-                });
-            } else {
                 fetchHTML(link+".html")
                 .then(value => {
                     content.innerHTML = value;
@@ -54,7 +48,6 @@ for (let link of tabs) {
                             break;
                     }
                 });
-            }
         });
 }
 
