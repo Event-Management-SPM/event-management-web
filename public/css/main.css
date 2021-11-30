@@ -398,6 +398,7 @@ a {
 #employees_container {
     height: 70vh;
     width: 60vw;
+    margin-left: 2.5%;
 }
 
 #export-btn {
